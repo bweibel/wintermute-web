@@ -1,9 +1,12 @@
 import React from 'react'
 
-function ServiceButton() {
+function ServiceButton(props) {
     return (
-        <div class="button service-button">
-            Button Label
+        <div className="button service-button">
+            <img className="logo" src={props.image}/>
+            <a href={props.linkUrl}>{props.label}</a>
         </div>
     )
-}
+  }
+  
+export default ServiceButton;

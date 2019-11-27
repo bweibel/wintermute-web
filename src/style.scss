@@ -2,43 +2,66 @@ $white:           #fffdff;
 $errie-black:     #181718;
 $electric-blue:   #6cf1f6;
 $pale-cyan:       #8ae0f5;
-$languid-lavender:#d1c8de;
-$wild-strawberry: #ff4ca8;
+$laser-red:       #d63429;
 
 $black:             $errie-black;
-$main:              $wild-strawberry;
+$main:              $laser-red;
+$main-glow:         lighten($main, 50%);
 $secondary:         $pale-cyan;
 $text:              $white;
 $text-dark:         $black;
-$text-light-alt:    $languid-lavender;
+$text-light-alt:    $pale-cyan;
+
+@mixin glow-text($color) {
+  color: lighten($color, 5%);
+  text-shadow: 0 0 3px $color;
+  animation-duration: .5s;
+  animation-name: text-flicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  
+}
+
+@keyframes text-flicker {
+  from {
+    text-shadow: 0 0 3px $main;
+  }
+
+  to {
+    text-shadow: 0 0 4px $main;
+  }
+}
 
 .App {
-  text-align: center;
   background-color: $black;
   min-height: 100vh;
 }
 
 .App-header {
-  background-color: $main;
   min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items:  center;
   justify-content: center;
-  font-size: calc(10px + 1vmin);
-  color: $languid-lavender;
+  font-size: calc(10px + 2vmin);
+  color: $white;
 
-  border-bottom:3px solid $secondary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include glow-text($main);
 }
 
 .button {
   cursor: pointer;
 }
 
+.media-services{
+
+}
+
 .service-buttons{
-  width: 80%;
-  margin: 2em auto;
-  padding: 3em;
+
   display: flex;
   flex-wrap: wrap;
 }
@@ -87,3 +110,5 @@ $text-light-alt:    $languid-lavender;
     }
   }
 }
+
+

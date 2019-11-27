@@ -1,7 +1,9 @@
 import React from 'react';
 import './style.scss';
 
-// import ServiceButton from 'components/ServiceButton';
+import ServiceButton from './components/ServiceButton';
+import Greeting from './components/Greeting';
+
 const services = [
   {
     "name" : "Plex",
@@ -35,18 +37,22 @@ const serviceButtons = services.map( service => {
   />;
 });
 
-
+const name = "Ben";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1><Clock /></h1>
-        
+        <h1><Greeting/>, {name || "user"}</h1>
       </header>
-      <div className="service-buttons">
-        {serviceButtons}
-      </div>
+      <section>
+        <header>SearchBar</header>
+        <SearchBar/>
+      </section>
+      <section>
+        <header><h3>wintermute</h3></header>
+        <div className="service-buttons">{serviceButtons}</div>
+      </section>
       
     </div>
   );
@@ -54,20 +60,16 @@ function App() {
 
 export default App;
 
-function ServiceButton(props) {
-  return (
-      <div className="button service-button">
-          <img className="logo" src={props.image}/>
-          <a href={props.linkUrl}>{props.label}</a>
-      </div>
-  )
+function SearchBar() {
+  return 
 }
 
 function Clock() {
   return ( 
     <div>
       {new
-       Date().toLocaleDateString()} | {new Date().toLocaleTimeString()}
+       Date().toLocaleDateString()} 
     </div>
   )
 }
+
