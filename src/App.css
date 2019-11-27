@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.service-buttons{
+  width: 80%;
+  margin: 2em auto;
+  padding: 3em;
+  border: 1px solid #222222;
+  display: flex;
+}
+
+.service-button {
+  padding: 1em;
+  margin: auto;
+  background: #282c34;
+}
+
+.service-button a, .service-button a:visited{
+  font-weight: bold;
+  color:white;
+  text-decoration: none;
+}
+
+.service-button:hover{
+  background: #111111;
+}
+
