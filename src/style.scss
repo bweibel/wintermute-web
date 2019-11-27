@@ -43,6 +43,7 @@ $wild-strawberry: #ff4ca8;
   transition: background .2s;
   max-width: 15%;
   min-width: 5em;
+  position: relative;
 
   a{
     font-weight: bold;
@@ -51,7 +52,6 @@ $wild-strawberry: #ff4ca8;
     left: 0;
     width: 100%;
     top: 0;
-    opacity: 0;
   }
 
   .logo{
