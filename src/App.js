@@ -46,8 +46,8 @@ function App() {
         <h1><Greeting/>, {name || "user"}</h1>
       </header>
       <section>
-        <header>SearchBar</header>
-        <SearchBar/>
+        <header><h3>SearchBar</h3></header>
+        {/* <SearchBar/> */}
       </section>
       <section>
         <header><h3>wintermute</h3></header>
